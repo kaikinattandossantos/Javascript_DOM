@@ -1,0 +1,1 @@
+Durante meu período na "Infity school" como monitor de programação, precisei de elementos visuais e demonstrativos para meus alunos, então coloquei no github alguns exemplos que usei em classe para que pudessem acessar remotamente, visto o incentivo de utilizarem o github para seu desenvolvimento como profissional. 
