@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM!</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <h1 class="título"> Teste DOM </h1>
+    <p class="parágrafo"> Não é tão difícil quanto parece :D </p>
+
+    <button id="Botao">Clique Aqui</button>
+
+    <script>
+
+        //modifica elementos:
+        const titulo = document.getElementsByClassName('título')[0];
+        const paragrafo = document.getElementsByClassName('parágrafo')[0];
+
+        titulo.textContent = 'Novo título!';
+        paragrafo.textContent = 'Esse texto foi gerado por elementos do DOM';
+
+        //adiciona elementos:
+        const novoElemento = document.createElement('div');
+        novoElemento.textContent = 'Sou um novo elemento!';
+        novoElemento.className = 'p-class'
+        document.body.append(novoElemento); //aqui adiciona no final do body
+
+        document.querySelector('.parágrafo').insertAdjacentHTML(
+        'afterend', //adicionar no meio do html, após o 'p' principal
+        '<div class="nova-classe">Elemento via HTML</div>'
+        );
+
+        const botao_principal = document.createElement('button');
+        botao_principal.textContent = 'novo botão em js';
+        botao_principal.addEventListener('click', () => {
+
+        const item_botao = document.createElement('p');
+        item_botao.textContent = 'você clicou, eu apareci';
+        document.body.append(item_botao);
+
+        });
+        
+
+        document.body.append(botao_principal);
+
+        const botaoexistente = document.getElementById('Botao');
+
+        botaoexistente.addEventListener('click', function() {
+            const fraseparabotao2 = document.createElement('p');
+            fraseparabotao2.textContent = 'clicou, apareci também';
+            document.body.append(fraseparabotao2);
+        });
+
+
+        //efeito ao entrar e sair do botao com o mouse
+        botaoexistente.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = 'yellow';
+        });
+        
+        botaoexistente.addEventListener('mouseout', function() {
+            this.style.background = 'white';
+        }); 
+
+
+        botao_principal.addEventListener('mouseenter', function() {
+            this.style.backgroundColor = 'blue';
+        });
+        
+        botao_principal.addEventListener('mouseout', function() {
+            this.style.background = 'white';
+        });
+
+    </script>
+</body>
+</html>
