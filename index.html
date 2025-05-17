@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -75,4 +76,40 @@
 
     </script>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM!</title>
+</head>
+<body>
+
+    <h1 class="título"> Teste DOM </h1>
+    <p class="parágrafo"> Não é tão difícil quanto parece :D </p>
+
+    <script>
+
+        //modifica elementos:
+        const titulo = document.getElementsByClassName('título')[0];
+        const paragrafo = document.getElementsByClassName('parágrafo')[0];
+
+        titulo.textContent = 'Novo título!';
+        paragrafo.textContent = 'Esse texto foi gerado por elementos do DOM';
+
+        //adiciona elementos:
+        const novoElemento = document.createElement('div');
+        novoElemento.textContent = 'Sou um novo elemento!';
+        document.body.append(novoElemento); //aqui adiciona no final do body
+
+        document.querySelector('.parágrafo').insertAdjacentHTML(
+        'afterend', //adicionar no meio do html
+        '<div class="nova-classe">Elemento via HTML</div>'
+        );
+
+
+    </script>
+</body>
+>>>>>>> c39574947c34b3ddb29421fb8c60bc119b614d68
 </html>
